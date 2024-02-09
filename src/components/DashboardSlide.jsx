@@ -10,12 +10,6 @@ import three from "../assets/panars/three.jpg";
 const DashboardSlide = () => {
 
 
- 
-  const images = [
-     'https://source.unsplash.com/random',
-     'https://source.unsplash.com/random',
-     'https://source.unsplash.com/random',
-  ];
   const settings = {
     dots: true,
     infinite: true,

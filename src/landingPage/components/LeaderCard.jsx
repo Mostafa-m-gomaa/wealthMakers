@@ -1,3 +1,4 @@
+import daw from '../../assets/images.png'
 const LeaderCard = ({ name, about, image, isOdd }) => {
   return (
     <div
@@ -6,13 +7,14 @@ const LeaderCard = ({ name, about, image, isOdd }) => {
       } my-4 bg-blackGold`}
     >
       <img
-        src={image}
+        src={name ==="MOHAMAMD ALDAWOOD"|| name==="DILBER ABI"?daw:image}
         loading="lazy"
-        className="h-[400px] rounded-full"
-        alt={`${name} image`}
+        className= {name ==="MOHAMAMD ALDAWOOD" || !image  ||name=== "DILBER ABI" ?"h-[200px] rounded-full"
+        : "h-[400px] rounded-full"
+      }         alt={`${name} image`}
       />
       <div>
-        <h2 className="text-3xl text-center md:text-right text-gold mx-6 my-4">
+        <h2 className=  "text-3xl text-center md:text-right text-gold mx-6 my-4">
           {name}
         </h2>
         <p className="my-8 mx-6">{about}</p>

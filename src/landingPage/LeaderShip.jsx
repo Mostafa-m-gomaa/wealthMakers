@@ -9,7 +9,9 @@ const LeaderShip = () => {
   useEffect(() => {
     axios
       .get(`${route}users/instractors`)
-      .then((res) => setLeaders(res.data.data));
+      .then((res) => {
+        console.log(res.data.data);
+        setLeaders(res.data.data)});
   }, []);
   return (
     <div>
@@ -25,6 +27,21 @@ const LeaderShip = () => {
       <div className="bg-lightGold">
         {leaders?.length ? (
           leaders.map((leader, index) => (
+            leader.name === "MOHAMAMD ALDAWOOD" ? null :
+            <LeaderCard
+              name={leader.name}
+              about={leader.about}
+              image={leader.profileImg}
+              key={leader._id}
+              isOdd={index % 2}
+            />
+          ))
+        ) : (
+          <LoadingSpinner />
+        )}
+        {leaders?.length ? (
+          leaders.map((leader, index) => (
+            leader.name !== "MOHAMAMD ALDAWOOD" ? null :
             <LeaderCard
               name={leader.name}
               about={leader.about}

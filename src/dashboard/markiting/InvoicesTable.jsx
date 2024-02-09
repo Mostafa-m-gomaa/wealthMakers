@@ -138,7 +138,7 @@ useEffect(() => {
                     item.direct_profits +
                     item?.customers_profits}
                 </td>
-                <td className=" border border-gray p-2 whitespace-nowrap">
+                <td className= {`border border-gray p-2 whitespace-nowrap ${item.status === "paid" ?"bg-blue" :null} ${item.status === "rejected" ?"bg-red" :null} ${item.status === "pending" ?"bg-gold" :null}`}>
                   {item.status === "paid" && "تم الدفع"}
                   {item.status === "pending" && "يتم المراجعة"}
                   {item.status === "rejected" && "مرفوض"}
@@ -149,7 +149,7 @@ useEffect(() => {
                   )}
                 </td>
 
-                <td className=" border border-gray p-2">
+                <td className=" border border-gray p-2 ">
                   {new Date(item.Date).toLocaleDateString()}
                 </td>
                 <td className=" border border-gray p-2">
