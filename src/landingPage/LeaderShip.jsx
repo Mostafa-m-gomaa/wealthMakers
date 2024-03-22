@@ -11,8 +11,14 @@ const LeaderShip = () => {
       .get(`${route}users/instractors`)
       .then((res) => {
         console.log(res.data.data);
-        setLeaders(res.data.data)});
+        setLeaders(res.data.data)
+      
+       
+      });
   }, []);
+
+
+  
   return (
     <div>
       <div className="bannerBg py-8">
@@ -25,7 +31,7 @@ const LeaderShip = () => {
         <h1>فريق صناع الثروة</h1>
       </div>
       <div className="bg-lightGold">
-        {leaders?.length ? (
+        {/* {leaders?.length ? (
           leaders.map((leader, index) => (
             leader.name === "MOHAMAMD ALDAWOOD" ? null :
             <LeaderCard
@@ -38,8 +44,21 @@ const LeaderShip = () => {
           ))
         ) : (
           <LoadingSpinner />
-        )}
+        )} */}
         {leaders?.length ? (
+          leaders.map((leader, index) => (
+            <LeaderCard
+              name={leader.name}
+              about={leader.about}
+              image={leader.profileImg}
+              key={leader._id}
+              isOdd={index % 2}
+            />
+          ))
+        ) : (
+          <LoadingSpinner />
+        )}
+        {/* {leaders?.length ? (
           leaders.map((leader, index) => (
             leader.name !== "MOHAMAMD ALDAWOOD" ? null :
             <LeaderCard
@@ -52,7 +71,7 @@ const LeaderShip = () => {
           ))
         ) : (
           <LoadingSpinner />
-        )}
+        )} */}
       </div>
     </div>
   );

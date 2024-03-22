@@ -76,7 +76,7 @@ const Profile = () => {
           <AddReview />
           <EditData />
           <a
-            href={`https://t.me/WealthMakerFXCompanyBOT?start=${data._id}`}
+            href={`https://t.me/Wealth_Makers_fx_bot?start=${data._id}`}
             target="_blank"
             rel="noreferrer"
             className="flex items-center justify-center w-[200px] h-[40px] bg-gold text-dark gap-4 font-semibold rounded-2xl"

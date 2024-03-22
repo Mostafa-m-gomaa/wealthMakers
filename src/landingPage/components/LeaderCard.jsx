@@ -7,12 +7,18 @@ const LeaderCard = ({ name, about, image, isOdd }) => {
       } my-4 bg-blackGold`}
     >
       <img
+        src={image}
+        loading="lazy"
+        className= {"h-[400px] rounded-full"
+      }         alt={`${name} image`}
+      />
+      {/* <img
         src={name ==="MOHAMAMD ALDAWOOD"|| name==="DILBER ABI"?daw:image}
         loading="lazy"
         className= {name ==="MOHAMAMD ALDAWOOD" || !image  ||name=== "DILBER ABI" ?"h-[200px] rounded-full"
         : "h-[400px] rounded-full"
       }         alt={`${name} image`}
-      />
+      /> */}
       <div>
         <h2 className=  "text-3xl text-center md:text-right text-gold mx-6 my-4">
           {name}
